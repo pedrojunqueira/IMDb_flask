@@ -1,0 +1,6 @@
+#exclude from commit
+
+.DS_Store
+.vscode/
+__pycache__
+venv

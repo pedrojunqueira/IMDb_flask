@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1> The review of the movie is: {{review[0]}}</h1>
+
+<h2> The prediction of the movie is : {{prediction}}</h2>
+
+<h2> The probability of certainty of the prediction of the movie is : {{'%.1f' | format(probability)}}%</h2>
+
+
+{% endblock content %}
