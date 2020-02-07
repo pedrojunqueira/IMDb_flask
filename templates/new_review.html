@@ -7,20 +7,46 @@
             <div class="form-group">
                 {{ form.content.label(class="form-control-label") }}
                 {% if form.content.errors %}
-                {{ form.content(class="form-control form-control-lg is-invalid") }}
+                {{ form.content(class="form-control form-control-sg is-invalid") }}
                 <div class="invalid-feedback">
                     {% for error in form.content.errors %}
                     <span>{{ error }}</span>
                     {% endfor %}
                 </div>
                 {% else %}
-                {{ form.content(class="form-control form-control-lg") }}
+                {{ form.content(class="form-control form-control-sm heighttext") }}
                 {% endif %}
             </div>
         </fieldset>
+        <div class="form-check">
+            {{ form.label.label }}
+            {{ form.label(style="list-style:none") }}    
+        </div>
         <div class="form-group">
             {{ form.submit(class="btn btn-outline-info") }}
         </div>
     </form>
 </div>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Review</th>
+            <th scope="col">Prediction</th>
+            <th scope="col">Probability</th>
+            <th scope="col">Review_Label</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for review in predictions %}
+        <tr>
+            <th scope="row">{{review.get('id')}}</th>
+            <td>{{review.get('review')}}</td>
+            <td>{{review.get('prediction')}}</td>
+            <td>{{review.get('probability')}}</td>
+            <td>{{review.get('label')}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 {% endblock content %}

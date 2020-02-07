@@ -1,0 +1,23 @@
+
+.content-section {
+  background: #ffffff;
+  padding: 10px 20px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+form {
+    width: 500px;
+    /* height: 300px; */
+    margin-left: 40px;
+    margin-right: auto;
+    /*margin-top: 50px; */  
+}
+
+.heighttext { 
+    line-height: 50px; 
+    }
+
+h1, h2 { margin-left: 20px;
+}    

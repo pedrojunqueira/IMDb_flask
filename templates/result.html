@@ -1,10 +1,25 @@
 {% extends "layout.html" %}
 {% block content %}
-<h1> The review of the movie is: {{review[0]}}</h1>
 
-<h2> The prediction of the movie is : {{prediction}}</h2>
-
-<h2> The probability of certainty of the prediction of the movie is : {{'%.1f' | format(probability)}}%</h2>
-
+<table class="table table-hover table-dark">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Review</th>
+            <th scope="col">Prediction</th>
+            <th scope="col">Probability</th>
+            <th scope="col">Review_Label</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>{{review[0]}}</td>
+            <td>{{prediction}}</td>
+            <td>{{'%.1f' | format(probability)}}%</td>
+            <td>{{review_label}}</td>
+        </tr>
+    </tbody>
+</table>
 
 {% endblock content %}
