@@ -29,6 +29,10 @@
         </div>
     </form>
 </div>
+<div>
+<h2 class="display-5">Last 10 Predictions</h2>
+
+</div>
 <table class="table table-hover">
     <thead>
         <tr>
@@ -40,15 +44,26 @@
         </tr>
     </thead>
     <tbody>
-        {% for review in predictions %}
-        <tr>
-            <th scope="row">{{review.get('id')}}</th>
-            <td>{{review.get('review')}}</td>
-            <td>{{review.get('prediction')}}</td>
-            <td>{{review.get('probability')}}</td>
-            <td>{{review.get('label')}}</td>
-        </tr>
+        {% for r in reviews %}
+            {% if r.prediction != r.label %}
+                <tr class="table-danger">
+                    <th scope="row">{{r.id}}</th>
+                    <td>{{r.body}}</td>
+                    <td>{{r.prediction}}</td>
+                    <td>{{'%.1f' | format(r.probability)}}%</td>
+                    <td>{{r.label}}</td>
+                </tr>
+            {% else %}
+                <tr>
+                    <th scope="row">{{r.id}}</th>
+                    <td>{{r.body}}</td>
+                    <td>{{r.prediction}}</td>
+                    <td>{{'%.1f' | format(r.probability)}}%</td>
+                    <td>{{r.label}}</td>
+                </tr>
+            {% endif %}
         {% endfor %}
     </tbody>
 </table>
+
 {% endblock content %}
