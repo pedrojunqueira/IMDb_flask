@@ -2,8 +2,8 @@ import re
 import pickle
 from sklearn.feature_extraction.text import HashingVectorizer
 
-stop = pickle.load(open('./pkl_objects/stopwords.pkl', 'rb'))
-clf = pickle.load(open('./pkl_objects/classifier.pkl', 'rb'))
+stop = pickle.load(open('./imdb/pkl_objects/stopwords.pkl', 'rb'))
+clf = pickle.load(open('./imdb/pkl_objects/classifier.pkl', 'rb'))
 
 # Run the pre process functions
 

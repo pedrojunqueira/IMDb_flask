@@ -16,7 +16,9 @@ form {
 }
 
 .heighttext { 
-    line-height: 50px; 
+    line-height: 20px;
+    padding-top: 20px;
+    padding-bottom: 30px; 
     }
 
 h1, h2 { margin-left: 20px;
